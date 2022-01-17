@@ -40,8 +40,9 @@ namespace ChattingAppAsp.NetCoreSignalR
             services.AddSignalR(Options =>
             {
                 Options.EnableDetailedErrors = true;
-                services.AddControllers();
+
             });
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +53,7 @@ namespace ChattingAppAsp.NetCoreSignalR
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseCors("AllowAllHeaders");
